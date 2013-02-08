@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "HelloWorldLayer.h"
+#import "View.h"
+#import "GraphicsEngine.h"
 
 @implementation SpaceBizAppDelegate
 @synthesize window=window_, glView=glView_;
@@ -17,7 +18,7 @@
 	CCDirectorMac *director = (CCDirectorMac*) [CCDirector sharedDirector];
 
 	// enable FPS and SPF
-	[director setDisplayStats:YES];
+	[director setDisplayStats:NO];
 	
 	// connect the OpenGL view with the director
 	[director setView:glView_];
@@ -33,7 +34,8 @@
 	// Center main window
 	[window_ center];
 	
-	[director runWithScene:[HelloWorldLayer scene]];
+	[director runWithScene:[View scene]];
+
 }
 
 - (BOOL) applicationShouldTerminateAfterLastWindowClosed: (NSApplication *) theApplication
